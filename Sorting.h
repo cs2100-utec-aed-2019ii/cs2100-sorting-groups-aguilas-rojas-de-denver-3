@@ -7,7 +7,7 @@ struct Sorting {
 	void Insert(std::vector <T> &v) {
 		short unsigned n = v.size();
 		for (int i = 0; i < n; i++) {
-			int temp = v[i];
+			T temp = v[i];
 			int j = i - 1;
 			while ( j >= 0 && v[j] > temp ) {
 				v[j + 1] = v[j];
