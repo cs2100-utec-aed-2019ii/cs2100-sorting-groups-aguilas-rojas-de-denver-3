@@ -2,15 +2,26 @@
 #include <vector>
 #include "Sorting.h"
 
+template <typename T>
+void Print(std::vector <T>& v) {
+	for (auto item : v)
+		std::cout << item << ' ';
+	std::cout << std::endl;
+}
+
 int main(int, char* []) {
-	
-	//InsertionSort
+
 	Sorting<int> s;
+
+	//InsertionSort
 	std::vector <int> IS = { 46, 25, 78, 105, 2, 34, 65, 102, 58, 97 };
 	s.Insert(IS);
+	Print(IS);
 
-	for (auto item : IS)
-		std::cout << item << ' ';
+	//SelectionSort
+	std::vector <int> SS = { 46, 25, 78, 105, 2, 34, 65, 102, 58, 97 };
+	s.Selection(SS);
+	Print(SS);
 
 	return 0;
 }
