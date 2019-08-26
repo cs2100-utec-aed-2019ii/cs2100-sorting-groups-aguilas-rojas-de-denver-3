@@ -23,5 +23,11 @@ int main(int, char* []) {
 	s.Selection(SS);
 	Print(SS);
 
+	//MergeSort
+	std::vector <int> MS = { 46, 25, 78, 105, 2, 34, 65, 102, 58, 97 };
+	s.Merge(MS, 0, MS.size() - 1);
+	Print(MS);
+
+
 	return 0;
 }
