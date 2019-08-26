@@ -3,23 +3,6 @@
 #include <vector>
 
 template <typename T>
-struct Node {
-	T data;
-	int index;
-	Node<T>* left;
-	Node<T>* right;
-	Node() {
-		left = nullptr;
-		right = nullptr;
-	}
-};
-
-template <typename T>
-struct Tree {
-	Node<T>* head;
-};
-
-template <typename T>
 struct Sorting {
 
 	void Insert(std::vector <T> &v) {
