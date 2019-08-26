@@ -28,6 +28,10 @@ int main(int, char* []) {
 	s.Merge(MS, 0, MS.size() - 1);
 	Print(MS);
 
+	//BubbleSort
+	std::vector <int> BB = { 46, 25, 78, 105, 2, 34, 65, 102, 58, 97 };
+	s.Bubble(BB);
+	Print(BB);
 
 	return 0;
 }

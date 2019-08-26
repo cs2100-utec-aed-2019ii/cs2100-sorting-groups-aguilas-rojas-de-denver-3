@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+using namespace std;
 
 template <typename T>
 struct Sorting {
@@ -85,6 +86,25 @@ struct Sorting {
 			Merge(v, middle + 1, rightIndex);
 
 			Combine(v, leftIndex, middle, rightIndex);
+		}
+	}
+
+	void Si_menor_cambio(T& a, T& b) {
+		if (a < b) {
+			T aux = b;
+			b = a;
+			a = aux;
+		}
+	}
+
+	void Bubble(vector<T>& lista) {
+		int tamano = lista.size();
+		if (tamano > 1) {
+			for (int j = 0; j < tamano; j++) {
+				for (int k = 0; k < tamano - 1; k++) {
+					Si_menor_cambio(lista[j], lista[k]);
+				}
+			}
 		}
 	}
 
