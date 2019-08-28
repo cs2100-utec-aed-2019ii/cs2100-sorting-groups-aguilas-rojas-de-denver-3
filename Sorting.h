@@ -1,6 +1,7 @@
 #pragma once
-
+#include <cmath>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 template <typename T>
@@ -104,6 +105,29 @@ struct Sorting {
 				for (int k = 0; k < tamano - 1; k++) {
 					Si_menor_cambio(lista[j], lista[k]);
 				}
+			}
+		}
+	}
+
+	void Bin(vector<T>& v) {
+		double size = v.size();
+		vector < vector <T> > bucket;
+		bucket.resize(size);
+		T max = *std::max_element(v.begin(), v.end());
+		int divider = ceil( (max + 1) / size );
+		int b_num;
+		for (int i = 0; i < size; i++) {
+			b_num = floor(v[i] / divider);
+			bucket[b_num].push_back(v[i]);
+		}
+		for (int i = 0; i < size; i++) {
+			Insert(bucket[i]);
+		}
+		int i = 0;
+		for (int j = 0; j < size; j++) {
+			for (unsigned int k = 0; k < bucket[j].size(); k++) {
+				v[i] = bucket[j][k];
+				i++;
 			}
 		}
 	}

@@ -33,5 +33,10 @@ int main(int, char* []) {
 	s.Bubble(BB);
 	Print(BB);
 
+	//BinSort
+	std::vector <int> BinS = { 46, 25, 78, 105, 2, 34, 65, 102, 58, 97 };
+	s.Bin(BinS);
+	Print(BinS);
+
 	return 0;
 }
