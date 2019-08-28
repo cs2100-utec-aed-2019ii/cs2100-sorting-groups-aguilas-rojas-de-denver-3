@@ -132,4 +132,44 @@ struct Sorting {
 		}
 	}
 
+	void Cambiazo(T& a, T& b) {
+		T aux = b;
+		b = a;
+		a = aux;
+	}
+
+	void Quick(vector<T>& lista) {
+		Quick(lista, 0, lista.size() - 1);
+	}
+
+
+	void Quick(vector<T>& lista, int ini, int fin) {
+
+		if (fin - ini > 1) {
+			T pivot = lista[ini];
+			int i = ini;
+			int j = ini + 1;
+			while (j < fin) {
+				while (j <= fin) {
+					if (lista[i] >= pivot && lista[j] < pivot) {
+						Cambiazo(lista[i], lista[j]);
+						break;
+					}
+					j++;
+				}
+				i++;
+			}
+			Quick(lista, ini, i);
+			Quick(lista, i, fin);
+		}
+		else {
+			if (fin - ini == 1) {
+				if (lista[ini] >= lista[fin]) {
+					Cambiazo(lista[ini], lista[fin]);
+				}
+			}
+		}
+	}
+
+
 };

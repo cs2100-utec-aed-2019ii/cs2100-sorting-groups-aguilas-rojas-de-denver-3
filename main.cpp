@@ -33,6 +33,11 @@ int main(int, char* []) {
 	s.Bubble(BB);
 	Print(BB);
 
+	//QuickSort
+	std::vector <int> QB = { 46, 25, 78, 105, 2, 34, 65, 102, 58, 97 };
+	s.Quick(QB);
+	Print(QB);
+
 	//BinSort
 	std::vector <int> BinS = { 46, 25, 78, 105, 2, 34, 65, 102, 58, 97 };
 	s.Bin(BinS);
