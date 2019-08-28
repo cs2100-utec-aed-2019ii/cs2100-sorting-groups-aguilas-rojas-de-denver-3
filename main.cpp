@@ -43,5 +43,10 @@ int main(int, char* []) {
 	s.Bin(BinS);
 	Print(BinS);
 
+	//HeapSort
+	std::vector <int> HS = { 46, 25, 78, 105, 2, 34, 65, 102, 58, 97 };
+	s.Heap(HS);
+	Print(HS);
+
 	return 0;
 }

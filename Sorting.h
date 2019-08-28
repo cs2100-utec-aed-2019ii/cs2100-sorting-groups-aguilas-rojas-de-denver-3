@@ -171,5 +171,46 @@ struct Sorting {
 		}
 	}
 
+	void Heap(vector<T>& lista, int ind) {
+
+		if (ind >= 0) {
+
+			if (((ind * 2) + 1) < lista.size()) {
+				Heap(lista, (ind * 2) + 1);
+			}
+			if (((ind * 2) + 2) < lista.size()) {
+				Heap(lista, (ind * 2) + 2);
+			}
+			if (ind % 2 == 0) {
+				int madre = (ind - 2) / 2;
+				if (madre >= 0) {
+					if (lista[ind] < lista[madre]) {
+						Cambiazo(lista[ind], lista[madre]);
+					}
+				}
+			}
+			else {
+				int madre = (ind - 1) / 2;
+				if (madre >= 0) {
+					if (lista[ind] < lista[madre]) {
+						Cambiazo(lista[ind], lista[madre]);
+					}
+				}
+			}
+		}
+	}
+
+	void Heap(vector<T>& lista) {
+		vector<T> temp;
+		int tamano = lista.size();
+		for (int i = 0; i < tamano; i++) {
+			Heap(lista, 0);
+			temp.push_back(lista[0]);
+			Cambiazo(lista[0], lista[lista.size() - 1]);
+			lista.pop_back();
+		}
+		lista = temp;
+
+	}
 
 };
